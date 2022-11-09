@@ -1,0 +1,27 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class BorderLayOut extends JFrame {
+	
+	public BorderLayOut() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c=getContentPane();
+		c.setLayout(new FlowLayout(FlowLayout.LEFT,30,40));
+		c.add(new JButton("add"));
+		c.add(new JButton("sub"));
+		c.add(new JButton("mul"));
+		c.add(new JButton("div"));
+		c.add(new JButton("calculate"));
+		
+		setSize(640,480);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BorderLayOut frame=new BorderLayOut();
+		
+
+	}
+
+}

@@ -1,0 +1,102 @@
+package hw11_1;
+
+import java.util.Scanner;
+
+public class Main {
+
+	static int []arrayStart;
+	static int []arrayEnd;
+    static int []temp;
+	static int []temp2;
+	static int conferTime;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scan=new Scanner(System.in);
+		conferTime=scan.nextInt();
+		arrayStart=new int[conferTime];
+		arrayEnd=new int[conferTime];
+		temp=new int[conferTime];
+		temp2=new int[conferTime];
+		for(int i=0; i<conferTime; i++) {
+			int startTime=scan.nextInt();
+			int endTime=scan.nextInt();
+			arrayStart[i]=startTime;
+			arrayEnd[i]=endTime;
+
+		}
+		mergeSort(arrayStart,0,conferTime-1);
+		mergeSort(arrayEnd,0,conferTime-1);
+		for(int i=0; i<conferTime; i++) {
+			System.out.print(arrayStart[i]+" ");
+		}
+		System.out.println();
+		for(int i=0; i<conferTime; i++) {
+			System.out.print(arrayEnd[i]+" ");
+		}
+		System.out.println();
+		System.out.print(conferSort(arrayStart,arrayEnd));
+
+
+
+	}
+	public static void mergeSort(int[]array,int start,int end) {
+		int middle=0;
+		if(start<end) {
+			middle=(start+end)/2;
+			mergeSort(array,start,middle);
+			mergeSort(array,middle+1,end);
+			merge(array,start,middle,end);
+		}
+
+	}
+	public static void merge(int []array,int start,int middle,int end) {
+		int startPoint=start;
+		int endPoint=middle+1;
+		int sortedIndex=start;
+	
+
+		while(startPoint<=middle && endPoint<=end) {
+			if(array[startPoint]<=array[endPoint]) {
+				temp[sortedIndex++]=array[startPoint++];
+			
+			}
+			else {
+				temp[sortedIndex++]=array[endPoint++];
+				
+			}
+		}
+		if(startPoint>middle) {
+			for(int i=endPoint; i<=end; i++) {
+				temp[sortedIndex++]=array[i];
+			
+			}
+		}
+		else {
+			for(int i=startPoint; i<=middle; i++) {
+				temp[sortedIndex++]=array[i];
+				
+			}
+		}
+		for(int i=start; i<=end; i++) {
+			array[i]=temp[i];
+		
+		}
+
+	}
+	public static int conferSort(int []arrayStart,int []arrayEnd) {
+		int count=0;
+		int check=0;
+		for(int i=0; i<conferTime; i++) {
+			if(check<=arrayStart[i] && arrayEnd[i]>=arrayStart[i]) {
+				check=arrayEnd[i];
+				count++;
+
+			}
+		}
+		return count;
+
+		
+	}
+
+}

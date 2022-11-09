@@ -1,0 +1,10 @@
+package hw1_2;
+
+public class ReservationMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

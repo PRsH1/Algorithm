@@ -1,0 +1,248 @@
+import java.util.*;
+
+
+
+public class GearHoningTest {
+
+	public static void main(String[] args) {
+		int gear;
+		int presentGear;
+		int cost;
+		double percent = 0;
+		double oneTryPercent;
+		double artistanPercent=0;
+		int honingAccept = 0;
+		GearHoning honing=new GearHoning(0,0,0);
+		Scanner input=new Scanner(System.in);
+		HoningExcute excute=new HoningExcute(0,0,0);
+		// TODO Auto-generated method stub
+		System.out.println("재련 시뮬레이터에 오신 것을 환영합니다");
+		System.out.println("아브렐슈드 장비의 재련 단계를 지원합니다");
+		while(true) {
+			System.out.print("무기 또는 방어구 재련 중 하나를 선택해주세요 (1)무기 (2)방어구 (0)종료:");
+			gear=input.nextInt();
+			if(gear==1 || gear==2) {
+				break;
+			}
+			else if(gear==0) {
+				System.out.print("시뮬레이터를 종료합니다");
+				System.exit(0);
+
+			}
+			else {
+				System.out.println("잘못된 값입니다 다시 입력해주세요");
+			}
+		}
+		System.out.print("현재 장비의 재련 단계를 입력해주세요(1~24):");
+		presentGear=input.nextInt();
+		if(presentGear<1 || presentGear>25) {
+			System.out.print("잘못된 재련 수치입니다");
+		}
+		else if(presentGear==25){
+			System.out.print("이미 최고 재련 단계입니다");
+		}
+		else {
+			System.out.print("재련을 진행하시겠습니까? 진행하시려면 1번을 눌러주세요: ");
+			
+			try {
+				honingAccept=input.nextInt();
+				if(honingAccept!=1) {
+					System.out.print("재련을 종료합니다");
+					System.exit(0);
+				}
+			}catch(InputMismatchException e) {
+				System.out.println("정수 입력 필드에 다른 값을 입력했습니다 프로그램을 종료합니다.");
+				System.exit(0);
+			}
+			
+			
+		
+	
+
+
+			if(presentGear<3 &&presentGear>0) {
+				if(honing.honing(presentGear,percent,artistanPercent)==true) {
+					System.out.print("장비 재련에 성공하였습니다");
+
+				}
+			}
+			else if(presentGear>=3 &&  presentGear<=5) {
+				oneTryPercent=4500;
+				percent=4500;
+				while(honingAccept==1) {
+					honingInformation(percent,artistanPercent);
+					honingStart();
+					if(honingAccept!=1) {
+						System.exit(0);
+						
+					}
+					else {
+						if(honing.honing(presentGear, percent,artistanPercent)==true) {
+							honingSuccess();
+							break;
+						}
+						else {
+							honingFailed(percent,oneTryPercent);
+							artistanPercent=artistanPercent+percent*0.0045;
+							artistanPercent=Math.round(artistanPercent*100)/100.0;
+							if(percent<2*oneTryPercent)
+								percent=percent+oneTryPercent/(double)10;
+					
+						}
+					}
+				}
+				
+
+			}
+			else if(presentGear>=6 && presentGear<=8) {
+
+			}
+			else if(presentGear==9 || presentGear==10) {
+
+			}
+			else if(presentGear==11 || presentGear==12) {
+				oneTryPercent=1000;
+				percent=1000;
+				while(honingAccept==1) {
+					honingInformation(percent,artistanPercent);
+					honingStart();
+					if(honingAccept!=1) {
+						System.exit(0);
+						
+					}
+					else {
+						if(honing.honing(presentGear, percent,artistanPercent)==true) {
+							honingSuccess();
+							break;
+						}
+						else {
+							honingFailed(percent,oneTryPercent);
+							artistanPercent=artistanPercent+percent*0.0045;
+							artistanPercent=Math.round(artistanPercent*100)/100.0;
+							if(percent<2*oneTryPercent)
+								percent=percent+oneTryPercent/(double)10;
+					
+						}
+					}
+				}
+
+			}
+			else if(presentGear==13 || presentGear==14) {
+				oneTryPercent=500;
+				percent=500;
+				while(honingAccept==1) {
+					honingInformation(percent,artistanPercent);
+					honingStart();
+					if(honingAccept!=1) {
+						System.exit(0);
+						
+					}
+					else {
+						if(honing.honing(presentGear, percent,artistanPercent)==true) {
+							honingSuccess();
+							break;
+						}
+						else {
+							honingFailed(percent,oneTryPercent);
+							artistanPercent=artistanPercent+percent*0.0045;
+							artistanPercent=Math.round(artistanPercent*100)/100.0;
+							if(percent<2*oneTryPercent)
+								percent=percent+oneTryPercent/(double)10;
+					
+						}
+					}
+				}
+
+			}
+			else if(presentGear==15 || presentGear==16) {
+				oneTryPercent=400;
+				percent=400;
+				while(honingAccept==1) {
+					honingInformation(percent,artistanPercent);
+					honingStart();
+					if(honingAccept!=1) {
+						System.exit(0);
+						
+					}
+					else {
+						if(honing.honing(presentGear, percent,artistanPercent)==true) {
+							honingSuccess();
+							break;
+						}
+						else {
+							honingFailed(percent,oneTryPercent);
+							artistanPercentCalc(artistanPercent,percent);
+							if(percent<2*oneTryPercent)
+								percent=percent+oneTryPercent/(double)10;
+					
+						}
+					}
+				}
+
+			}
+			else if(presentGear==17 || presentGear==18) {
+
+			}
+			else if(presentGear==19 || presentGear==20) {
+
+			}
+			else if(presentGear==21 || presentGear==22) {
+
+			}
+			else if(presentGear==23 || presentGear==24) {
+
+			}
+
+
+
+		}
+		
+		
+
+
+
+
+
+	}
+	public static void honingInformation(double percent,double artistanPercent) {
+		System.out.println("현재 재련 확률은 "+percent/100+ " % 입니다");
+		System.out.println("현재 장인의 기운은 "+artistanPercent+ " % 입니다");
+	}
+	public static int honingStart() {
+		int honingAccept;
+		Scanner input=new Scanner(System.in);
+		System.out.print("재련을 계속하시겠습니까? 진행하시려면 1번을 눌러주세요:");
+	    honingAccept=input.nextInt();
+	    return honingAccept;
+	}
+	public static void honingSuccess() {
+		System.out.println("장비 재련에 성공하였습니다");
+		
+	}
+	public static void honingFailed(double percent,double oneTryPercent) {
+		double artistanPercent;
+		if(percent>=2*oneTryPercent) {
+			System.out.println("장비 재련에 실패했습니다");
+			artistanPercent=percent*0.0045;
+			System.out.println("장인의 기운이 "+String.format("%.2f", artistanPercent)+ "% 상승합니다");
+			System.out.println("더 이상 실패로 장비 재련 성공 확률을 올릴 수 없습니다.");
+		}
+		else {
+			System.out.println("장비 재련에 실패했습니다");
+			artistanPercent=percent*0.0045;
+			System.out.println("장인의 기운이 "+String.format("%.2f", artistanPercent)+ "% 상승합니다");
+			System.out.println("성공 확률이 "+oneTryPercent/(double)1000+ "% 상승합니다." );
+			
+		}
+		
+	
+
+		
+	}
+	public static double artistanPercentCalc(double artistanPercent,double percent) {
+		artistanPercent=artistanPercent+percent*0.0045;
+		artistanPercent=Math.round(artistanPercent*100)/100.0;
+		return artistanPercent;
+	}
+
+}

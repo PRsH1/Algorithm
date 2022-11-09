@@ -1,0 +1,178 @@
+
+public class HoningCost {
+	//재련 비용 클래스
+	private int cost;
+
+	public HoningCost(int cost) {
+		super();
+		this.cost = cost;
+	}
+
+	public int weaponCost(int presentGear) {
+		//무기 비용 메소드
+		if(presentGear<3 &&presentGear>0) {
+			cost=720;
+			return cost;
+		}
+
+		else if(presentGear>=3 &&  presentGear<=5) {
+			cost=750;
+			return cost;
+
+
+		}
+		else if(presentGear>=6 && presentGear<=8) {
+			cost=770;
+			return cost;
+
+		}
+		else if(presentGear==9 || presentGear==10) {
+			cost=790;
+			return cost;
+
+		}
+		else if(presentGear==11 || presentGear==12) {
+			cost=800;
+			return cost;
+
+
+		}
+		else if(presentGear==13 || presentGear==14) {
+			if(presentGear==13)
+				cost=870;
+			else
+				cost=940;
+			return cost;
+
+		}
+		else if(presentGear==15 || presentGear==16) {
+			if(presentGear==15)
+				cost=1120;
+			else
+				cost=1200;
+			return cost;
+
+
+		}
+		else if(presentGear==17 || presentGear==18) {
+			if(presentGear==17)
+				cost=1350;
+			else
+				cost=1440;
+			return cost;
+
+		}
+		else if(presentGear==19 || presentGear==20) {
+			if(presentGear==19)
+				cost=1600;
+			else
+				cost=1700;
+			return cost;
+
+		}
+		else if(presentGear==21 || presentGear==22) {
+			if(presentGear==21)
+				cost=1880;
+			else
+				cost=2000;
+			return cost;
+
+		}
+		else if(presentGear==23 || presentGear==24) {
+			if(presentGear==23)
+				cost=2250;
+			else
+				cost=2450;
+			return cost;
+
+		}
+		else
+			return 0;
+		
+
+	}
+	public int armorCost(int presentGear) {
+		//방어구 비용 메소드ㄲ
+		if(presentGear<3 &&presentGear>0) {
+			cost=430;
+			return cost;
+
+		}
+
+		else if(presentGear>=3 &&  presentGear<=5) {
+			cost=450;
+			return cost;
+
+
+		}
+		else if(presentGear>=6 && presentGear<=8) {
+			cost=460;
+			return cost;
+
+		}
+		else if(presentGear==9 || presentGear==10) {
+			cost=470;
+			return cost;
+
+		}
+		else if(presentGear==11 || presentGear==12) {
+			cost=480;
+			return cost;
+
+
+		}
+		else if(presentGear==13 || presentGear==14) {
+			if(presentGear==13)
+				cost=520;
+			else
+				cost=560;
+			return cost;
+
+		}
+		else if(presentGear==15 || presentGear==16) {
+			if(presentGear==13)
+				cost=670;
+			else
+				cost=720;
+			return cost;
+
+
+		}
+		else if(presentGear==17 || presentGear==18) {
+			if(presentGear==13)
+				cost=810;
+			else
+				cost=860;
+			return cost;
+
+		}
+		else if(presentGear==19 || presentGear==20) {
+			if(presentGear==13)
+				cost=960;
+			else
+				cost=1020;
+			return cost;
+
+		}
+		else if(presentGear==21 || presentGear==22) {
+			if(presentGear==13)
+				cost=1130;
+			else
+				cost=1200;
+			return cost;
+
+		}
+		else if(presentGear==23 || presentGear==24) {
+			if(presentGear==13)
+				cost=1350;
+			else
+				cost=1470;
+			return cost;
+
+		}
+		else
+			return 0;
+
+	}
+
+}

@@ -1,0 +1,34 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class GridLayOutEx extends JFrame {
+	
+	public GridLayOutEx() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c=getContentPane();
+		c.setLayout(new GridLayout(4,3));
+		c.add(new JButton("1"));
+		c.add(new JButton("2"));
+		c.add(new JButton("3"));
+		c.add(new JButton("4"));
+		c.add(new JButton("5"));
+		c.add(new JButton("6"));
+		c.add(new JButton("7"));
+		c.add(new JButton("8"));
+		c.add(new JButton("9"));
+		c.add(new JButton("0"));
+		
+		setSize(640,480);
+		setVisible(true);
+		
+		JPanel p=new JPanel();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GridLayOutEx frame=new GridLayOutEx();
+		
+
+	}
+
+}

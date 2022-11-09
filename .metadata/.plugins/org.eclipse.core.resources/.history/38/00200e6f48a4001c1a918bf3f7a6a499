@@ -1,0 +1,24 @@
+package hw1_2;
+
+public class ReservationMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Reservation []array=new Reservation[10];
+		
+		for(int i=0; i<10; i++) {
+			
+			array[i].setStartTime((int) (Math.random()*5+1));
+			array[i].setEndTime((int)Math.random()*5+2);
+			if(array[i].getStartTime()>=array[i].getEndTime())
+			{
+				i--;
+			}
+			else
+				System.out.print(array[i].getId()+" "+array[i].getStartTime()+"시~"+array[i].getEndTime()+"시 "+array[i].getUseTime()+"시간\n");
+		}
+		
+
+	}
+
+}

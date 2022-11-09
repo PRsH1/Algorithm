@@ -1,0 +1,25 @@
+import javax.swing.JFrame;
+
+class MyFrame1 extends JFrame{
+
+	public MyFrame1() {
+		
+		
+		setTitle("Swing Frame 640*480 /MyFrameApp");
+		setSize(640,480);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+}
+
+
+public class MyApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MyFrame1 frame=new MyFrame1();
+	}
+
+}

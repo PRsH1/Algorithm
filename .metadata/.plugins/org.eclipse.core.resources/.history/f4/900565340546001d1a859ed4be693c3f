@@ -1,0 +1,30 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class FlowLayoutEx extends JFrame {
+	
+	public FlowLayoutEx() {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c=getContentPane();//프레임에 구성요소를 붙일떄 이 함수를 호출한다(getContentPane)
+		//컨텐츠 영역을 가져오는 함수임 
+		
+		c.setLayout(new FlowLayout(FlowLayout.RIGHT,30,40));
+		c.add(new JButton("add"));
+		c.add(new JButton("sub"));
+		c.add(new JButton("mul"));
+		c.add(new JButton("div"));
+		c.add(new JButton("calculate"));
+		
+		setSize(640,480);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FlowLayoutEx frame=new FlowLayoutEx();
+		
+
+	}
+
+}

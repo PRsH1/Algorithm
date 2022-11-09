@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class NullContainerEx extends JFrame {
+	
+	public NullContainerEx() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c=getContentPane();
+		c.setLayout(null);
+		
+		JButton btn=new JButton();
+		btn.setLocation(10,10);
+		btn.setSize(50,20);
+		btn.setBounds(10,10,100,80);
+		c.add(btn);
+
+		
+		setSize(640,480);
+		setVisible(true);
+		
+		JPanel p=new JPanel();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		NullContainerEx frame=new NullContainerEx();
+		
+
+	}
+
+}

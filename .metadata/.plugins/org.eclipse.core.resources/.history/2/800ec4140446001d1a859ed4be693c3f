@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class ContentPaneEx extends JFrame {
+	
+	public ContentPaneEx() {
+		
+		setTitle("contentpane°ú JFrame");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container contentPane=getContentPane();
+		contentPane.setBackground(Color.orange);
+		contentPane.setLayout(new FlowLayout());
+		contentPane.add(new JButton("ok"));
+		contentPane.add(new JButton("cancle"));
+		contentPane.add(new JButton("ignore"));
+		
+		setSize(640,480);
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ContentPaneEx frame=new ContentPaneEx();
+		
+
+	}
+
+}

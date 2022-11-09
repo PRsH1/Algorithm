@@ -1,0 +1,55 @@
+package hw7_1;
+
+public class MyHashTable {
+	private class Node {
+		int key;
+		Node link;
+	}
+	private Node[] table;//Å×ÀÌºí
+	private int m;
+	private int n;
+	private static final double A=0.6180339887;
+
+	public MyHashTable(int m) {
+		table=new Node[m];
+		this.m=m;
+		this.n=10;
+		// TODO Auto-generated constructor stub
+	}
+	private int hash(int key) {
+	
+		return (int) (key*A%1*m);
+	}
+	public void add(int key) {
+
+		int i=hash(key);
+		Node node=new Node();
+		node.link=table[i];
+		table[i]=node;
+		table[i].key=key;
+	
+		
+
+	}
+	public double getLoadFactor() {
+		return n/m;
+	}
+	public boolean contains(int key) {
+		int i=hash(key);
+		return table[i]==null ? false:true;
+		
+	}
+	public void printTable() {
+		for(int i=0; i<table.length; i++) {
+			System.out.print("table[" + i+ "] = ");
+			Node temp=table[i];
+			while(temp!=null) {
+				System.out.print(temp.key+" ");
+				temp=temp.link;
+			}
+			System.out.println();
+		}
+
+	}
+
+}

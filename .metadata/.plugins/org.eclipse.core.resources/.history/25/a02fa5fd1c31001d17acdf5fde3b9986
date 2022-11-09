@@ -1,0 +1,62 @@
+import java.math.*;
+import java.util.*;
+
+
+
+public class GearHoning {
+	
+	Random rnd=new Random();
+	private int gearRank;
+	private int gear;
+	private double successPercent;
+	public GearHoning(int gearRank,int gear,double successPercent) {
+		this.gear=gear;
+		this.gearRank=gearRank;
+		this.successPercent=successPercent;
+	}
+	
+	public boolean honing(int gearRank,double successPercent){
+		if(gearRank<3 &&gearRank>0) {
+			return true;
+
+		}
+		else if(gearRank>=3 &&  gearRank<=5) {
+			if(successPercent>=rnd.nextInt(10000)+1) {
+				return true;
+			}
+			else
+				return false;
+
+		}
+		else if(gearRank>=6 && gearRank<=8) {
+
+		}
+		else if(gearRank==9 && gearRank==10) {
+
+		}
+		else if(gearRank==11 && gearRank==12) {
+
+		}
+		else if(gearRank==13 && gearRank==14) {
+
+		}
+		else if(gearRank==15 && gearRank==16) {
+
+		}
+		else if(gearRank==17 && gearRank==18) {
+
+		}
+		else if(gearRank==19 && gearRank==20) {
+
+		}
+		else if(gearRank==21 && gearRank==22) {
+
+		}
+		else if(gearRank==23 && gearRank==24) {
+			
+		}
+		return false;
+		
+	}
+	
+}

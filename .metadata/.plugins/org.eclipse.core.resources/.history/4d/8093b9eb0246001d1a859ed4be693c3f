@@ -1,0 +1,17 @@
+import javax.swing.*;
+
+public class MyFrame extends JFrame{
+
+	public MyFrame() {
+		setTitle("Swing Frame 640*480");
+		setSize(640,480);
+		setVisible(true);
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyFrame frame=new MyFrame();
+
+	}
+
+}
